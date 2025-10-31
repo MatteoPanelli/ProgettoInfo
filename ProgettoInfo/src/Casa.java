@@ -7,6 +7,7 @@ public class Casa {
 	private JFrame f;
 
     public Casa() {
+    	
     	f = new JFrame();
         f.setSize(800 , 400 );
         f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -29,12 +30,12 @@ public class Casa {
             }
         };
 
-        pannelloSfondo.setLayout(new BorderLayout());
+        
 
         
 
        
-        f.setContentPane(pannelloSfondo);
+        f.setContentPane(pannelloSfondo); 
         
         f.setVisible(true);
     }
