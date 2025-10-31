@@ -29,6 +29,19 @@ public class Casa {
             private Image batteria = new ImageIcon(  
     				getClass().getResource("batteria.png") 
     			).getImage();
+            
+            private Image temperatura = new ImageIcon(  
+    				getClass().getResource("temperatura.png") 
+    			).getImage();
+            
+            private Image co2 = new ImageIcon(  
+    				getClass().getResource("co2.png") 
+    			).getImage();
+            
+            private Image idro = new ImageIcon(  
+    				getClass().getResource("idro.png") 
+    			).getImage();
+                       
                        
             
         
@@ -44,6 +57,12 @@ public class Casa {
                 g.drawImage(allarme, 165 , 460,  64,64, this);
                 
                 g.drawImage(batteria, 1045 , 620,  64,64, this);
+                
+                g.drawImage(temperatura, 930 , 470,  64,64, this);
+                
+                g.drawImage(co2, 165 , 600,  64,64, this);
+                
+                g.drawImage(idro, 385 , 600,  64,64, this);
                 
             }
         };
