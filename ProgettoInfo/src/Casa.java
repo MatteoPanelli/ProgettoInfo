@@ -2,9 +2,9 @@ import javax.swing.*;
 import java.awt.*;
 
 public class Casa {
-	
-	private JFrame f;
 
+	private JPanel p;
+	private JFrame f;
     public Casa() {
     	
     	f = new JFrame();
