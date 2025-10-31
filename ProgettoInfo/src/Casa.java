@@ -17,22 +17,19 @@ public class Casa {
         // Pannello personalizzato per disegnare lo sfondo
         JPanel pannelloSfondo = new JPanel() {
             private Image sfondo = new ImageIcon(
-                getClass().getResource("imm.png") // ← carica dal package corrente
+                getClass().getResource("imm.png") //  carica dal package corrente
             ).getImage();
 
             @Override
             protected void paintComponent(Graphics g) {
                 super.paintComponent(g);
-                int bordoBianco = 200;
+                int bordoBianco = 250;
                 
                 
                 g.drawImage(sfondo, 0, 0, getWidth()- bordoBianco, getHeight(), this);
             }
         };
-
-        
-
-        
+   
 
        
         f.setContentPane(pannelloSfondo); 
