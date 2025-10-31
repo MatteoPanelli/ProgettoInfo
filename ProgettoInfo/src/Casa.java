@@ -4,6 +4,7 @@ import java.awt.*;
 public class Casa {
 
 	private JPanel p;
+	private JButton b;
 	private JFrame f;
     public Casa() {
     	//ciao
