@@ -7,7 +7,7 @@ public class Casa {
 	private JButton b;
 	private JFrame f;
     public Casa() {
-    	//ciao
+ 
     	f = new JFrame();
         f.setSize(800 , 400 );
         f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -25,6 +25,10 @@ public class Casa {
             private Image allarme = new ImageIcon(  
 				getClass().getResource("allarme.png") 
 			).getImage();
+            
+            private Image batteria = new ImageIcon(  
+    				getClass().getResource("batteria.png") 
+    			).getImage();
                        
             
         
@@ -37,7 +41,10 @@ public class Casa {
                 
                 g.drawImage(sfondo, 0, 0, getWidth()- bordoBianco, getHeight(), this);
                 
-                g.drawImage(allarme, 400 , 300,  64,64, this);
+                g.drawImage(allarme, 165 , 460,  64,64, this);
+                
+                g.drawImage(batteria, 1045 , 620,  64,64, this);
+                
             }
         };
    
