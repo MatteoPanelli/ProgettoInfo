@@ -3,7 +3,6 @@ import java.awt.*;
 
 public class Casa {
 	
-	
 	private JFrame f;
 
     public Casa() {
