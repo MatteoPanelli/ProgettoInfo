@@ -37,7 +37,7 @@ public class Casa {
                 
                 g.drawImage(sfondo, 0, 0, getWidth()- bordoBianco, getHeight(), this);
                 
-                g.drawImage(allarme,500 , 500,  getWidth(), getHeight(), this);
+                g.drawImage(allarme, 400 , 300,  64,64, this);
             }
         };
    
