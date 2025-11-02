@@ -1,6 +1,4 @@
-//CIAO DAL PROF
-//CIAO DAL MANU :)
-//CIAO DAL MANU :)
+//FINALE
 import javax.swing.*;
 import java.awt.*;
 
@@ -10,7 +8,7 @@ public class Casa {
 	private JButton b;
 	private JFrame f;
     public Casa() {
- 
+
     	f = new JFrame();
         f.setSize(800 , 400 );
         f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -21,7 +19,7 @@ public class Casa {
         JPanel pannelloSfondo = new JPanel() {
         	 
             private Image sfondo = new ImageIcon(  
-                getClass().getResource("imm.png") 
+                getClass().getResource("img.png") 
             ).getImage();
             
             
