@@ -8,6 +8,7 @@ public class Casa {
 	private JFrame f;
     public Casa() {
     	//ciao
+    	// Creazione della finestra principale
     	f = new JFrame();
         f.setSize(800 , 400 );
         f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -18,7 +19,7 @@ public class Casa {
         JPanel pannelloSfondo = new JPanel() {
         	 
             private Image sfondo = new ImageIcon(  
-                getClass().getResource("imm.png") 
+                getClass().getResource("img.png") 
             ).getImage();
             
             
