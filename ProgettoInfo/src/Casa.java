@@ -1,11 +1,14 @@
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class Casa {
 
 
 	private JFrame f;
+	
 	
     public Casa() {
 
@@ -50,9 +53,10 @@ public class Casa {
     				getClass().getResource("temperatura.png") 
     			).getImage();
             
-            private Image co2 = new ImageIcon(  
-    				getClass().getResource("co2.png") 
-    			).getImage();
+            //private Image co2 = new ImageIcon(  
+    				//getClass().getResource("co2.png") 
+    			//).getImage();
+            private JButton co2 = creaPulsante("co2", 165, 600); //bottone immagine co2
             
             private Image idro = new ImageIcon(  
     				getClass().getResource("idro.png") 
@@ -75,7 +79,7 @@ public class Casa {
                 
                 g.drawImage(temperatura, 930 , 470,  64,64, this);
                 
-                g.drawImage(co2, 165 , 600,  64,64, this);
+                //g.drawImage(co2, 165 , 600,  64,64, this);
                 
                 g.drawImage(idro, 385 , 600,  64,64, this);
                 
@@ -84,6 +88,22 @@ public class Casa {
 		return pannelloSfondo;
 	}
     
+	public JButton creaPulsante(String s, int x, int y) {
+		ImageIcon icon = new ImageIcon(getClass().getResource(s));
+		JButton btnIcon = new JButton(icon);
+		
+		btnIcon.setBounds(x, y, 64, 64);
+		
+		btnIcon.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                System.out.println(JFrame.EXIT_ON_CLOSE);
+            }
+        });
+		
+		return btnIcon;
+	}
+	
     public static void main(String[] args) {
     		
 			Casa casa = new Casa();
