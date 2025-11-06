@@ -7,6 +7,7 @@ import java.awt.event.ActionListener;
 public class Casa {
 
 
+	private static final int ICON_SIZE = 64;
 	private JFrame f;
 	
 	
@@ -17,16 +18,46 @@ public class Casa {
         f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         f.setLocationRelativeTo(null);
 
-
+        
        
         JPanel pannelloSfondo = disegnoComponenti();
-   
+        
 
+         disegnoBottoni(pannelloSfondo);
+         
+     
        
         f.setContentPane(pannelloSfondo); 
         
         f.setVisible(true);
     }
+
+
+
+
+
+
+	private void disegnoBottoni(JPanel pannelloSfondo) {
+		
+		pannelloSfondo.setLayout(null);
+		
+		JButton co2 = creaPulsante("co2.png", 165, 600);
+         pannelloSfondo.add(co2);
+         
+         JButton bAllarme = creaPulsante("allarme.png", 165, 460);
+         pannelloSfondo.add(bAllarme);
+         
+         JButton bIdro = creaPulsante("idro.png", 385, 600);
+         pannelloSfondo.add(bIdro);
+         
+
+         JButton bBatteria = creaPulsante("batteria.png", 1045, 620);
+         pannelloSfondo.add(bBatteria);
+         
+
+         JButton bTemperatura = creaPulsante("temperatura.png", 930, 470);
+         pannelloSfondo.add(bTemperatura);
+	}
 
     
     
@@ -39,60 +70,31 @@ public class Casa {
             private Image sfondo = new ImageIcon(  
                 getClass().getResource("imm.png") 
             ).getImage();
-            
-            
-            private Image allarme = new ImageIcon(  
-				getClass().getResource("allarme.png") 
-			).getImage();
-            
-            private Image batteria = new ImageIcon(  
-    				getClass().getResource("batteria.png") 
-    			).getImage();
-            
-            private Image temperatura = new ImageIcon(  
-    				getClass().getResource("temperatura.png") 
-    			).getImage();
-            
-            //private Image co2 = new ImageIcon(  
-    				//getClass().getResource("co2.png") 
-    			//).getImage();
-            private JButton co2 = creaPulsante("co2", 165, 600); //bottone immagine co2
-            
-            private Image idro = new ImageIcon(  
-    				getClass().getResource("idro.png") 
-    			).getImage();
-                       
-                       
+                        
            
-
             @Override
             protected void paintComponent(Graphics g) {
                 super.paintComponent(g);
                 int bordoBianco = 250;
-                
-                
+                                
                 g.drawImage(sfondo, 0, 0, getWidth()- bordoBianco, getHeight(), this);
                 
-                g.drawImage(allarme, 165 , 460,  64,64, this);
-                
-                g.drawImage(batteria, 1045 , 620,  64,64, this);
-                
-                g.drawImage(temperatura, 930 , 470,  64,64, this);
-                
-                //g.drawImage(co2, 165 , 600,  64,64, this);
-                
-                g.drawImage(idro, 385 , 600,  64,64, this);
-                
+                             
             }
         };
 		return pannelloSfondo;
 	}
+	
+	
     
 	public JButton creaPulsante(String s, int x, int y) {
 		ImageIcon icon = new ImageIcon(getClass().getResource(s));
 		JButton btnIcon = new JButton(icon);
 		
-		btnIcon.setBounds(x, y, 64, 64);
+		btnIcon.setBounds(x, y, ICON_SIZE, ICON_SIZE);
+		
+		btnIcon.setBorderPainted(false); 	// Rimuove il bordo del pulsante
+		btnIcon.setContentAreaFilled(false);   // Rimuove lo sfondo del pulsante
 		
 		btnIcon.addActionListener(new ActionListener() {
             @Override
