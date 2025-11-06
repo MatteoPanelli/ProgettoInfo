@@ -1,12 +1,12 @@
-//FINALE
+
 import javax.swing.*;
 import java.awt.*;
 
 public class Casa {
 
-	private JPanel p;
-	private JButton b;
+
 	private JFrame f;
+	
     public Casa() {
 
     	f = new JFrame();
@@ -15,11 +15,26 @@ public class Casa {
         f.setLocationRelativeTo(null);
 
 
-        // Pannello personalizzato per disegnare lo sfondo
-        JPanel pannelloSfondo = new JPanel() {
+       
+        JPanel pannelloSfondo = disegnoComponenti();
+   
+
+       
+        f.setContentPane(pannelloSfondo); 
+        
+        f.setVisible(true);
+    }
+
+    
+    
+    
+    
+    
+	private JPanel disegnoComponenti() {
+		JPanel pannelloSfondo = new JPanel() {
         	 
             private Image sfondo = new ImageIcon(  
-                getClass().getResource("img.png") 
+                getClass().getResource("imm.png") 
             ).getImage();
             
             
@@ -44,8 +59,7 @@ public class Casa {
     			).getImage();
                        
                        
-            
-        
+           
 
             @Override
             protected void paintComponent(Graphics g) {
@@ -67,13 +81,8 @@ public class Casa {
                 
             }
         };
-   
-
-       
-        f.setContentPane(pannelloSfondo); 
-        
-        f.setVisible(true);
-    }
+		return pannelloSfondo;
+	}
     
     public static void main(String[] args) {
     		
