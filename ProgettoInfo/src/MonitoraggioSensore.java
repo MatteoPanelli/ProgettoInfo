@@ -1,24 +1,32 @@
 
 public class MonitoraggioSensore {
 		
-	private boolean attivo = false;
+	private boolean pronto = false;
 	
 	
-	public synchronized boolean inviaSegnale() {
-		return attivo;
+	public synchronized boolean isAttivo() {
+		return pronto;
 	}
 	
 	
 	public synchronized void attendiSegnale() {
-		while(!attivo) {
+		while(!pronto) {
 			try {
-				wait();
-				
+				wait();					
 			}catch(InterruptedException e) {
 				e.printStackTrace();
 			}
 		}
 		
+		pronto = false;
+	}
+	
+	
+	public synchronized void setAttivo(boolean stato) {
+		this.pronto= stato;
+		if(stato) {
+			notifyAll();
+		}
 		
 	}
 	
