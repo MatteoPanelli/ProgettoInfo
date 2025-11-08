@@ -75,9 +75,9 @@ public class Casa {
             @Override
             protected void paintComponent(Graphics g) {
                 super.paintComponent(g);
-                int bordoBianco = 250;
+                
                                 
-                g.drawImage(sfondo, 0, 0, getWidth()- bordoBianco, getHeight(), this);
+                g.drawImage(sfondo, 0, 0, getWidth()- 250, getHeight(), this);
                 
                              
             }
@@ -97,9 +97,28 @@ public class Casa {
 		btnIcon.setContentAreaFilled(false);   // Rimuove lo sfondo del pulsante
 		
 		btnIcon.addActionListener(new ActionListener() {
+			
+			
             @Override
             public void actionPerformed(ActionEvent e) {
-                System.out.println(JFrame.EXIT_ON_CLOSE);
+                MonitoraggioSensore monitoraggio = new MonitoraggioSensore();
+                Sensore sensore = new Sensore(s, monitoraggio);
+                
+                sensore.start();
+                
+                new Thread(() -> {
+					try {
+						
+						Thread.sleep(10);
+						monitoraggio.setAttivo(true);
+						
+					} catch (InterruptedException ex) {
+						ex.printStackTrace();
+					}
+					
+				}).start();
+                
+                
             }
         });
 		
